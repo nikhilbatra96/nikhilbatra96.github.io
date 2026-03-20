@@ -100,13 +100,13 @@ button:hover {
 <!-- 1 -->
 <section id="start">
     <h1>Hey Babe ❤️</h1>
-    <p>I made something for you… don’t judge, okay? 😌</p>
+    <p>I have something for you… 😌</p>
     <button onclick="next('story1')">Start</button>
 </section>
 
 <!-- 2 -->
 <section id="story1" class="hidden">
-    <h2>Dear Yashna…</h2>
+    <!-- <h2>Dear Yashna…</h2> -->
     <p>
         I don’t know how you do it…<br>
         but you turned my normal life into something stupidly beautiful.
@@ -117,13 +117,17 @@ button:hover {
 <!-- 3 -->
 <section id="story2" class="hidden">
     <h2>Things I Love About You 😌</h2>
-    <p>Warning: This list is unfairly long</p>
+    <p>Warning: This list is unfairly long and cute but baaki baatein puchi ke baad, okay? :*</p>
     <br>
-    <p>• Your weird faces (yes, even the ugliest ones 😤)</p>
-    <p>• Your childish talks (I secretly love them)</p>
-    <p>• The way you say “babe” 🫠</p>
-    <p>• And how you became my favorite human… without permission</p>
-    <button onclick="next('gallery')">Next</button>
+    <button onclick="$('#cuteLittleThings').show();">Next</button>
+    <div id="cuteLittleThings" style="display:none;">
+        <p>• Your weird faces (yes, even the ugliest ones 😤)</p>
+        <p>• Your childish talks </p>
+        <p>• The way you say “babe” 🫠</p>
+        <p>• And how you became my favorite human… without my permission</p>
+        <button onclick="next('gallery')">Next</button>
+    </div>
+    
 </section>
 
 <!-- 4 -->
