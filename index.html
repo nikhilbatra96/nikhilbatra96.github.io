@@ -27,6 +27,10 @@ section {
     align-items: center;
     text-align: center;
     padding: 20px;
+    max-height: 1000px; /* Large enough value */
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-out, padding 0.5s;
 }
 
 h1, h2, p {
@@ -49,11 +53,11 @@ button:hover {
 }
 
 .hidden {
-    display: none;
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    padding-top: 0;
+    padding-bottom: 0;
+    visibility: hidden;
 }
 
 .gallery {
@@ -114,7 +118,7 @@ button:hover {
 <section id="story1" class="hidden">
     <!-- <h2>Dear Yashna…</h2> -->
     <p>
-        I don’t know how you do it…<br>
+        I don’t know how you did it…<br>
         but you turned my normal life into something stupidly beautiful.
     </p>
     <button onclick="next('story2')">Next</button>
@@ -177,7 +181,7 @@ button:hover {
         And I just sit there thinking —<br>
         “How did I get this lucky?”<br><br>
     </p>
-    <button onclick="next('cheekuMoments')">To chale fir aage after one more puchi? 🤭</button>
+    <button onclick="next('cheekuMoments')">One more puchi? 🤭</button>
 </section>
 
 <!-- 4 -->
@@ -292,7 +296,7 @@ button:hover {
 <script>
 function next(id) {
     document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
-    document.getElementById(id).classList.toggle("hidden");
+    document.getElementById(id).classList.remove("hidden");
     if(id == 'story1') document.getElementById('bgm').play();
     else if(id == 'answer') confetti();
 }
@@ -304,10 +308,10 @@ function love() {
 }
 
 function moveNo() {
-    document.getElementById('noBtnText').classList.toggle("hidden");
-    document.getElementById('yesBtn').classList.toggle("hidden");
-    document.getElementById('noBtn').classList.toggle("hidden");
-    document.getElementById('beforeNoText').classList.toggle("hidden");
+    document.getElementById('noBtnText').classList.remove("hidden");
+    document.getElementById('yesBtn').classList.remove("hidden");
+    document.getElementById('noBtn').classList.add("hidden");
+    document.getElementById('beforeNoText').classList.add("hidden");
     let btn = document.getElementById("noBtn");
     let x = Math.random() * 200 - 100;
     let y = Math.random() * 200 - 100;
