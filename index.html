@@ -98,7 +98,8 @@ button:hover {
 <body>
 
 <!-- 1 -->
-<embed name="Khat" src="Khat.mp3" loop="true" hidden="true" autostart="true">
+<audio id="bgm" src="Khat.mp3" loop>
+</audio>
 <section id="start">
     <h1>Hey Babe ❤️</h1>
     <p>I have something for you… 😌</p>
@@ -288,7 +289,8 @@ button:hover {
 function next(id) {
     document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
     document.getElementById(id).classList.remove("hidden");
-    if(id == 'answer') confetti();
+    if(id == 'story1') document.getElementById('bgm').play();
+    else if(id == 'answer') confetti();
 }
 
 function love() {
