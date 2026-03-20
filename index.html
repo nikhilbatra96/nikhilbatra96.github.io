@@ -101,7 +101,7 @@ button:hover {
 <section id="start">
     <h1>Hey Babe ❤️</h1>
     <p>I have something for you… 😌</p>
-    <button onclick="next('story1')">Start</button>
+    <button onclick="next('story1')">To chaliye shuru karte hain bina kisi bakchodi ke 😌</button>
 </section>
 
 <!-- 2 -->
@@ -117,17 +117,51 @@ button:hover {
 <!-- 3 -->
 <section id="story2" class="hidden">
     <h2>Things I Love About You 😌</h2>
-    <p>Warning: This list is unfairly long and cute but baaki baatein puchi ke baad, okay? :*</p>
+    <p>Warning: This list is unfairly long and cute but baaki baatein puchi ke baad, okay? 🤤😘</p>
     <br>
-    <button onclick="$('#cuteLittleThings').show();">Next</button>
-    <div id="cuteLittleThings" style="display:none;">
-        <p>• Your weird faces (yes, even the ugliest ones 😤)</p>
-        <p>• Your childish talks </p>
-        <p>• The way you say “babe” 🫠</p>
-        <p>• And how you became my favorite human… without my permission</p>
-        <button onclick="next('gallery')">Next</button>
-    </div>
-    
+    <button onclick="next('cuteLittleThings')">Kissed me already?</button>    
+</section>
+
+<section id="cuteLittleThings">
+    <p>• Your weird faces (yes, even the ugliest ones 😤)</p>
+    <p>• Your voice </p>
+    <p>• The way you say “babe” 🫠</p>
+    <p>• And how you became my favorite human in such a short span of time and that too without my permission </p>
+    <button onclick="next('deep')">To chale fir aage?</button>
+</section>
+
+<section id="deep" >
+    <h2>You know what's funny? 🙈</h2>
+    <p style="max-width:500px; line-height: 1.6;">
+        I don’t just listen when you talk…<br>
+        I stare at you like an idiot ..... jaise<br><br>
+    </p>
+    <button onclick="next('jaise')">Jaise?</button>
+</section>
+
+<section id="jaise" >
+    <p style="max-width:500px; line-height: 1.6;">
+        Jaise, khilta gulaab<br>
+        jaise, shaayar ka khwaab...<br>
+        Jaise, ujjli kiran, jaise, van mein hiran...<br><br>
+
+        Jaise, chaandni raat, jaise, narmi ki baat...<br>
+        Jaise, mandir mein ho ek jalta diyaa...<br>
+
+        Ho! Ek ladki ko dekha, to aisa lagaa...🙈❤️<br><br>
+    </p>
+    <button onclick="next('aisaLaga')">Aur bataun kaisa laga?</button>
+</section>
+
+<section id="aisaLaga" >
+    <p style="max-width:500px; line-height: 1.6;">
+        The way you randomly switch to that childish tone….<br>
+        Everything about you is just uffff 🤌🏽❤️<br><br><br><br><br><br>
+
+        And I just sit there thinking —<br>
+        “How did I get this lucky?”<br><br>
+    </p>
+    <button onclick="next('gallery')">To chale fir aage after one more puchi? 🤭</button>
 </section>
 
 <!-- 4 -->
@@ -148,7 +182,7 @@ button:hover {
 <section id="game" class="hidden">
     <h2>Important Question 😏</h2>
     <p>Who loves you more?</p>
-    <button onclick="love()">Nikhil 😎</button>
+    <button onclick="love()">Nikhil 😎</button><br>
     <button onclick="love()">Also Nikhil 😌</button>
     <p id="loveText"></p>
     <br>
@@ -171,7 +205,7 @@ button:hover {
 
     <div class="proposal-buttons">
         <button onclick="yes()">Yes ❤️</button>
-        <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+        <button id="noBtn" onclick="moveNo();" onmouseover="moveNo();">No 😜</button>
     </div>
 
     <h2 id="result"></h2>
@@ -195,7 +229,7 @@ function moveNo() {
 }
 
 function yes() {
-    document.getElementById("result").innerText = "I knew it, my Cheeku ❤️✨";
+    document.getElementById("result").innerText = "I knew it, Baby ❤️😘✨";
     confetti();
 }
 
