@@ -161,30 +161,70 @@ button:hover {
         And I just sit there thinking —<br>
         “How did I get this lucky?”<br><br>
     </p>
-    <button onclick="next('gallery')">To chale fir aage after one more puchi? 🤭</button>
+    <button onclick="next('cheekuMoments')">To chale fir aage after one more puchi? 🤭</button>
 </section>
 
 <!-- 4 -->
-<section id="gallery" class="hidden">
+<section id="cheekuMoments" class="hidden">
     <h2>My Favorite Cheeku Moments 📸</h2>
-    <div class="gallery">
-        <img src="img1.jpg">
-        <img src="img2.jpg">
-        <img src="img3.jpg">
-        <img src="img4.jpg">
-        <img src="img5.jpg">
-    </div>
+    <br>
+    <img src="img1.jpg">
+    <br>
+    <p>That mirror selfie energy? Unmatched. 🫠</p>
+    <br>
+    <button onclick="next('img2')">Next</button>
+</section>
+
+<section id="img2" class="hidden">
+    <h2>My Favorite Cheeku Moments 📸</h2>
+    <br>
+    <img src="img2.jpg">
+    <br>
+    <p>That tiny smirk you do... Nahi main kya karu pighal hi jaun kyaaaa? 🫠</p>
+    <br>
+    <button onclick="next('img3')">Next</button>
+</section>
+
+<section id="img3" class="hidden">
+    <h2>My Favorite Cheeku Moments 📸</h2>
+    <br>
+    <img src="img3.jpg">
+    <br>
+    <p>The one with the pink dress or should I rather call it a red dress to irritate you a bit 🙈</p>
+    <br>
+    <button onclick="next('img5')">Next</button>
+</section>
+
+<section id="img5" class="hidden">
+    <h2>My Favorite Cheeku Moments 📸</h2>
+    <br>
+    <img src="img5.jpg">
+    <br>
+    <p>Vo smile, vo eyes ... bhai nasha hogya mujhe 😶‍🌫️</p>
+    <br>
+    <button onclick="next('img4')">Next</button>
+</section>
+
+<section id="img4" class="hidden">
+    <h2>My Favorite Cheeku Moments 📸</h2>
+    <br>
+    <img src="img4.jpg">
+    <br>
+    <p>That laugh. Fully uncontrollable. Absolutely contagious. Somebody send help asap...pleaseeeee. 🙈</p>
     <br>
     <button onclick="next('game')">Next</button>
 </section>
+
+
 
 <!-- 5 -->
 <section id="game" class="hidden">
     <h2>Important Question 😏</h2>
     <p>Who loves you more?</p>
     <button onclick="love()">Nikhil 😎</button><br>
-    <button onclick="love()">Also Nikhil 😌</button>
-    <p id="loveText"></p>
+    <button onclick="love()">Also Nikhil 😌</button><br>
+    <p id="loveText"></p><br>
+    <p id="alsoMoreLoveText"></p>
     <br>
     <button onclick="next('final')">Continue</button>
 </section>
@@ -219,6 +259,7 @@ function next(id) {
 
 function love() {
     document.getElementById("loveText").innerText = "Correct answer: Obviously Nikhil 😎❤️";
+    document.getElementById("alsoMoreLoveText").innerText = "PS: Aur koi hua to pitt bhi jaega mujhse 👊😡";
 }
 
 function moveNo() {
