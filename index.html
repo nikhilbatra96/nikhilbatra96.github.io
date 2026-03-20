@@ -243,8 +243,10 @@ button:hover {
 
     <h2>Will you be mine forever, Cheeku? 💍</h2>
 
+    <h3 id="noBtnText" class="hidden">Bataun abhi? 😏</h3>
+
     <div class="proposal-buttons">
-        <button onclick="next('terms')">Yes ❤️</button>
+        <button id="yesBtn" onclick="next('terms')" class="hidden">Yes ❤️</button>
         <button id="noBtn" onclick="moveNo();" onmouseover="moveNo();">No 😜</button>
     </div>
 </section>
@@ -281,6 +283,8 @@ function love() {
 }
 
 function moveNo() {
+    document.getElementById('noBtnText').classList.remove("hidden");
+    document.getElementById('yesBtn').classList.remove("hidden");
     let btn = document.getElementById("noBtn");
     let x = Math.random() * 200 - 100;
     let y = Math.random() * 200 - 100;
