@@ -233,7 +233,7 @@ button:hover {
 <section id="final" class="hidden">
     <img src="couple.jpg" style="width:200px; border-radius:15px; margin-bottom:20px;">
     
-    <h1>Okay… Enough Jokes ❤️</h1>
+    <div id="beforeNoText"><h1>Okay… Enough Jokes ❤️</h1>
     <p>
         Babe, in all seriousness…<br><br>
         You’re not just someone I love…<br>
@@ -241,7 +241,7 @@ button:hover {
         So here’s the real question…
     </p>
 
-    <h2>Will you be mine forever, Cheeku? 💍</h2>
+    <h2>Will you be mine forever, Cheeku? 💍</h2></div>
 
     <h3 id="noBtnText" class="hidden">Bataun abhi? 😏</h3>
 
@@ -285,6 +285,7 @@ function love() {
 function moveNo() {
     document.getElementById('noBtnText').classList.remove("hidden");
     document.getElementById('yesBtn').classList.remove("hidden");
+    document.getElementById('beforeNoText').classList.add("hidden");
     let btn = document.getElementById("noBtn");
     let x = Math.random() * 200 - 100;
     let y = Math.random() * 200 - 100;
