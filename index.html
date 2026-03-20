@@ -240,7 +240,7 @@ button:hover {
     <p id="loveText"></p><br>
     <p id="alsoMoreLoveText"></p>
     <br>
-    <button onclick="next('final')">Continue</button>
+    <button id="finalBtn" class="hidden" onclick="next('final')">Continue</button>
 </section>
 
 <!-- 6 -->
@@ -296,6 +296,7 @@ function next(id) {
 function love() {
     document.getElementById("loveText").innerText = "Correct answer: Obviously Nikhil 😎❤️";
     document.getElementById("alsoMoreLoveText").innerText = "PS: Aur koi hua to pitt bhi jaega mujhse 👊😡";
+    document.getElementById('finalBtn').classList.remove("hidden");
 }
 
 function moveNo() {
