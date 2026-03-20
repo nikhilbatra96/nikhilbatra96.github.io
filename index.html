@@ -244,17 +244,35 @@ button:hover {
     <h2>Will you be mine forever, Cheeku? 💍</h2>
 
     <div class="proposal-buttons">
-        <button onclick="yes()">Yes ❤️</button>
+        <button onclick="next('terms')">Yes ❤️</button>
         <button id="noBtn" onclick="moveNo();" onmouseover="moveNo();">No 😜</button>
     </div>
+</section>
+<section id="terms" class="hidden">
+    <h2 id="result">Terms and conditions</h2>
+    <p>• Just keep smiling </p>
+    <p>• Never fight with me</p>
+    <p>• Give me tightest of hugs </p>
+    <p>• Never leave me</p>
+    <p>• Give me intense kisses</p>
+    <button onclick="next('answer')">Do you agree?</button>
+</section>
 
-    <h2 id="result"></h2>
+<section id="answer" class="hidden">
+    <img src="couple.jpg" style="width:200px; border-radius:15px; margin-bottom:20px;">
+    
+    <!-- <h2 id="result">"I already knew it, Baby ❤️😘✨"</h2> -->
+    <h2 id="result">Knew it the whole time, obviously</h2>
+    <p>Welcome to the role of Nikhil's favourite person, Yashna. ❤️😘<br/>
+        <em>It comes with zero downsides.</em>
+    </p>
 </section>
 
 <script>
 function next(id) {
     document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
     document.getElementById(id).classList.remove("hidden");
+    if(id == 'answer') confetti();
 }
 
 function love() {
