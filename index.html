@@ -86,7 +86,38 @@ button:hover {
 #noBtn {
     position: relative;
 }
-
+.heart{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: red;
+    transform: rotate(45deg);
+}
+.heart::before,
+.heart::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 50%;
+}
+.heart::before{
+    top: -8px;
+    left: 0px;
+}
+.heart::after{
+    left: -8px;
+    top: 0px;
+}
+.confetti-container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 .confetti {
     position: fixed;
     width: 10px;
@@ -285,17 +316,28 @@ button:hover {
 <section id="answer" class="hidden">
     <img src="couple.jpg" style="width:200px; border-radius:15px; margin-bottom:20px;">
     <h2 id="result">Knew it the whole time, obviously</h2>
+    <div class="confetti-container"></div>
     <p>Welcome to the role of Nikhil's favourite person, Yashna. ❤️😘<br/>
         <em>It comes with zero downsides.</em>
     </p>
 </section>
 
 <script>
+const confettiContainer = document.querySelector('.confetti-container');
 function next(id) {
     document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
     document.getElementById(id).classList.remove("hidden");
     if(id == 'story1') document.getElementById('bgm').play();
-    else if(id == 'answer') confetti();
+    else if(id == 'answer') {
+        // confetti();
+        const rect = confettiContainer[0].getBoundingClientRect();
+        const originX = rect.left + rect.width/ 2;
+        const originY = rect.top + rect.height/ 2;
+
+        for(let i = 0; i < 40; i++){
+            createHeart(originX, originY);
+        }
+    }
 }
 
 function love() {
@@ -303,7 +345,39 @@ function love() {
     document.getElementById("alsoMoreLoveText").innerText = "PS: Aur koi hua to pitt bhi jaega mujhse 👊😡";
     document.getElementById('finalBtn').classList.remove("hidden");
 }
+function popOutHearts(x,y){
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
 
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+
+    const angle = Math.random()*2*Math.PI;
+    const distance = Math.random()**300+100;
+
+    const xMove = Math.cos(angle)*distance;
+    const yMove = Math.sin(angle)*distance;
+
+    const duration = Math.random()*1+1.5;
+    
+    heart.animate([
+        {
+            transform: "translate(0,0) scale(1) rotate(45deg))",
+            opacity: 1
+        },
+        {
+            transform: `translate(${xMove}px, ${yMove}px) scale(1) rotate(45deg))`,
+            opacity: 0
+        }
+    ], {
+        duration: duration*1000,
+        easing: "ease-out"
+        }
+    );
+    confettiContainer.appendChild(heart);
+
+    setTimeout(() => heart.remove(), duration *1000);
+}
 function moveNo() {
     document.getElementById('noBtnText').classList.remove("hidden");
     document.getElementById('yesBtn').classList.remove("hidden");
